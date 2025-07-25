@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabletop RPG Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>Tabletop RPG Hub</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rules">Rules</a></li>
+                <li><a href="#character-creator">Character Creator</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Welcome to the Tabletop RPG Hub</h2>
+            <p>Your one-stop destination for tabletop roleplaying games</p>
+        </section>
+
+        <section id="character-creator">
+            <h2>Character Creator</h2>
+            <div class="character-form">
+                <form id="characterForm">
+                    <div class="form-group">
+                        <label for="name">Character Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="race">Race:</label>
+                        <select id="race">
+                            <option value="">Select Race</option>
+                            <option value="human">Human</option>
+                            <option value="elf">Elf</option>
+                            <option value="dwarf">Dwarf</option>
+                            <option value="halfling">Halfling</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="class">Class:</label>
+                        <select id="class">
+                            <option value="">Select Class</option>
+                            <option value="fighter">Fighter</option>
+                            <option value="wizard">Wizard</option>
+                            <option value="rogue">Rogue</option>
+                            <option value="cleric">Cleric</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="level">Level:</label>
+                        <input type="number" id="level" min="1" max="20" value="1">
+                    </div>
+                    <div class="ability-scores">
+                        <h3>Ability Scores</h3>
+                        <div class="score-group">
+                            <label for="strength">Strength:</label>
+                            <input type="number" id="strength" min="1" max="20" value="10">
+                        </div>
+                        <div class="score-group">
+                            <label for="dexterity">Dexterity:</label>
+                            <input type="number" id="dexterity" min="1" max="20" value="10">
+                        </div>
+                        <div class="score-group">
+                            <label for="constitution">Constitution:</label>
+                            <input type="number" id="constitution" min="1" max="20" value="10">
+                        </div>
+                        <div class="score-group">
+                            <label for="intelligence">Intelligence:</label>
+                            <input type="number" id="intelligence" min="1" max="20" value="10">
+                        </div>
+                        <div class="score-group">
+                            <label for="wisdom">Wisdom:</label>
+                            <input type="number" id="wisdom" min="1" max="20" value="10">
+                        </div>
+                        <div class="score-group">
+                            <label for="charisma">Charisma:</label>
+                            <input type="number" id="charisma" min="1" max="20" value="10">
+                        </div>
+                    </div>
+                    <button type="submit">Create Character</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="rules">
+            <h2>Game Rules</h2>
+            <div class="rules-content">
+                <p>Coming soon...</p>
+            </div>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <div class="resources-content">
+                <p>Coming soon...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
