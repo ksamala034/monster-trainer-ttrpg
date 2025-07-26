@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Typography, Paper, Box, List, ListItem, ListItemText, Grid, Button, useTheme, Divider } from '@mui/material';
+import { Container, Typography, Paper, Box, List, ListItem, ListItemText, Grid, Button, useTheme, Divider, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { ChevronLeft, ChevronRight, MenuBook, Timeline, Psychology, Pets, LibraryBooks, SportsKabaddi } from '@mui/icons-material';
 
 const Rules = () => {
@@ -294,42 +294,46 @@ const Rules = () => {
                 DC Scaling
               </Typography>
               
-              <Box sx={{ mt: 2, mb: 3 }}>
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>9 or below</Typography>
-                <Typography variant="body1" paragraph>
-                  A relatively easy task for a trainer. A monster who is untrained for this task might find it difficult.
-                </Typography>
-                
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>10-12</Typography>
-                <Typography variant="body1" paragraph>
-                  A fairly challenging task for unspecialized trainers and most rookie monsters
-                </Typography>
-                
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>13-16</Typography>
-                <Typography variant="body1" paragraph>
-                  A very challenging task for new trainers and monsters but only slightly difficult task for specialized trainers and well trained monsters
-                </Typography>
-                
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>17-20</Typography>
-                <Typography variant="body1" paragraph>
-                  A difficult task but doable task for specialized trainers. Monsters have to be well trained in this skill area to succeed in this task as well.
-                </Typography>
-                
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>21-24</Typography>
-                <Typography variant="body1" paragraph>
-                  Only specialized trainers can hope to succeed in this task without the use of luck. Only Monsters who are now specialized in this skill area will be able complete these tasks consistently
-                </Typography>
-                
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>25-28</Typography>
-                <Typography variant="body1" paragraph>
-                  A task that cannot be completed within the realm of a trainer's capabilities. A trainer needs a well trained and specialized monster to be able even complete this task.
-                </Typography>
-                
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>29+</Typography>
-                <Typography variant="body1" paragraph>
-                  Even a powerful and well trained monster needs a bit of luck to complete these kinds of tasks.
-                </Typography>
-              </Box>
+              <TableContainer component={Paper} sx={{ mt: 2, mb: 3 }}>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>DC Range</TableCell>
+                      <TableCell sx={{ fontWeight: 'bold' }}>Difficulty Description</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>9 or below</TableCell>
+                      <TableCell>A relatively easy task for a trainer. A monster who is untrained for this task might find it difficult.</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>10-12</TableCell>
+                      <TableCell>A fairly challenging task for unspecialized trainers and most rookie monsters</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>13-16</TableCell>
+                      <TableCell>A very challenging task for new trainers and monsters but only slightly difficult task for specialized trainers and well trained monsters</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>17-20</TableCell>
+                      <TableCell>A difficult task but doable task for specialized trainers. Monsters have to be well trained in this skill area to succeed in this task as well.</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>21-24</TableCell>
+                      <TableCell>Only specialized trainers can hope to succeed in this task without the use of luck. Only Monsters who are now specialized in this skill area will be able complete these tasks consistently</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>25-28</TableCell>
+                      <TableCell>A task that cannot be completed within the realm of a trainer's capabilities. A trainer needs a well trained and specialized monster to be able even complete this task.</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold' }}>29+</TableCell>
+                      <TableCell>Even a powerful and well trained monster needs a bit of luck to complete these kinds of tasks.</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
               
               <Typography variant="body1" paragraph>
                 Once the DM sets the DC (they may or may not tell the player the exact number), a player or their monster must roll the following:
@@ -904,15 +908,46 @@ const Rules = () => {
                 For each time a monster's health points are depleted they are marked with a critical injury. Getting a critical injury mark always manifests as deducting a point from your monster's loyalty and deducting a health die they recover health from. Then that monster suffers an effect from a list that can be rolled using a d6.
               </Typography>
               
-              <Typography variant="body1" paragraph sx={{ fontWeight: 'bold', textAlign: 'center', bgcolor: 'grey.100', p: 2, borderRadius: 1 }}>
-                <strong>Critical Injury Effects (1d6):</strong><br/>
-                1 - Monster faints and is unconscious until break/healing<br/>
-                2 - Monster moves at half speed in one movement option<br/>
-                3 - Monster temporarily cannot use techniques<br/>
-                4 - Monster temporarily cannot benefit from a trait<br/>
-                5 - Monster must make a loyalty check<br/>
-                6 - Nothing happens to this monster
+              <Typography variant="h5" gutterBottom sx={{ mt: 2 }}>
+                Critical Injury Effects (1d6)
               </Typography>
+              
+              <TableContainer component={Paper} sx={{ mt: 2, mb: 3 }}>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold', width: '80px' }}>Roll</TableCell>
+                      <TableCell sx={{ fontWeight: 'bold' }}>Effect</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold', textAlign: 'center' }}>1</TableCell>
+                      <TableCell>Monster faints and is unconscious until break/healing</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold', textAlign: 'center' }}>2</TableCell>
+                      <TableCell>Monster moves at half speed in one movement option</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold', textAlign: 'center' }}>3</TableCell>
+                      <TableCell>Monster temporarily cannot use techniques</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold', textAlign: 'center' }}>4</TableCell>
+                      <TableCell>Monster temporarily cannot benefit from a trait</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold', textAlign: 'center' }}>5</TableCell>
+                      <TableCell>Monster must make a loyalty check</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ fontWeight: 'bold', textAlign: 'center' }}>6</TableCell>
+                      <TableCell>Nothing happens to this monster</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
               
               <Typography variant="body1" paragraph>
                 Each time a monster is marked with a critical injury they roll an additional 1d6 and take the lower result. Each mark also subtracts a health die from their health pool until they take a rest.
@@ -951,44 +986,19 @@ const Rules = () => {
             Trainer Rules
           </Typography>
           
-          <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            Trainer Classes
+          <Typography variant="h5" sx={{ 
+            textAlign: 'center', 
+            mt: 8, 
+            mb: 8, 
+            color: 'secondary.main',
+            fontStyle: 'italic'
+          }}>
+            Coming Soon
           </Typography>
-          <Typography variant="body1" paragraph>
-            Trainers can specialize in different approaches to monster training:
-          </Typography>
-          <Box component="ul" sx={{ ml: 3 }}>
-            <Typography component="li" variant="body1"><strong>Beast Master</strong> - Focuses on bonding with wild creatures</Typography>
-            <Typography component="li" variant="body1"><strong>Scholar</strong> - Studies monster behavior and abilities</Typography>
-            <Typography component="li" variant="body1"><strong>Guardian</strong> - Protects monsters and maintains balance</Typography>
-            <Typography component="li" variant="body1"><strong>Competitor</strong> - Trains monsters for tournaments and battles</Typography>
-          </Box>
           
-          <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            Monster Bonding
+          <Typography variant="body1" sx={{ textAlign: 'center', color: 'text.secondary' }}>
+            Detailed trainer rules and mechanics are currently being developed.
           </Typography>
-          <Typography variant="body1" paragraph>
-            Trainers form bonds with monsters through:
-          </Typography>
-          <Box component="ul" sx={{ ml: 3 }}>
-            <Typography component="li" variant="body1">Spending time together during rest periods</Typography>
-            <Typography component="li" variant="body1">Successful training sessions</Typography>
-            <Typography component="li" variant="body1">Protecting the monster from harm</Typography>
-            <Typography component="li" variant="body1">Providing favorite foods and care</Typography>
-          </Box>
-          
-          <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            Training Actions
-          </Typography>
-          <Typography variant="body1" paragraph>
-            During combat, trainers can use their action to:
-          </Typography>
-          <Box component="ul" sx={{ ml: 3 }}>
-            <Typography component="li" variant="body1">Command a monster to take a specific action</Typography>
-            <Typography component="li" variant="body1">Encourage a monster (grants advantage on next roll)</Typography>
-            <Typography component="li" variant="body1">Recall a monster to safety</Typography>
-            <Typography component="li" variant="body1">Use items or equipment</Typography>
-          </Box>
         </Box>
       )
     },
@@ -1001,45 +1011,19 @@ const Rules = () => {
             Monster Rules
           </Typography>
           
-          <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            Monster Types
+          <Typography variant="h5" sx={{ 
+            textAlign: 'center', 
+            mt: 8, 
+            mb: 8, 
+            color: 'secondary.main',
+            fontStyle: 'italic'
+          }}>
+            Coming Soon
           </Typography>
-          <Typography variant="body1" paragraph>
-            Monsters are categorized by their primary nature:
-          </Typography>
-          <Box component="ul" sx={{ ml: 3 }}>
-            <Typography component="li" variant="body1"><strong>Elemental</strong> - Fire, Water, Earth, Air creatures</Typography>
-            <Typography component="li" variant="body1"><strong>Beast</strong> - Natural animals with enhanced abilities</Typography>
-            <Typography component="li" variant="body1"><strong>Spirit</strong> - Ethereal beings with magical powers</Typography>
-            <Typography component="li" variant="body1"><strong>Construct</strong> - Artificial creatures made of various materials</Typography>
-            <Typography component="li" variant="body1"><strong>Hybrid</strong> - Creatures combining multiple types</Typography>
-          </Box>
           
-          <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            Monster Abilities
+          <Typography variant="body1" sx={{ textAlign: 'center', color: 'text.secondary' }}>
+            Detailed monster rules and mechanics are currently being developed.
           </Typography>
-          <Typography variant="body1" paragraph>
-            Each monster has unique abilities based on their type and individual nature:
-          </Typography>
-          <Box component="ul" sx={{ ml: 3 }}>
-            <Typography component="li" variant="body1">Basic attacks (bite, claw, tackle, etc.)</Typography>
-            <Typography component="li" variant="body1">Special abilities (elemental breath, healing, etc.)</Typography>
-            <Typography component="li" variant="body1">Passive traits (night vision, flight, etc.)</Typography>
-            <Typography component="li" variant="body1">Learned moves (taught by trainers)</Typography>
-          </Box>
-          
-          <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            Monster Growth
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Monsters grow stronger through:
-          </Typography>
-          <Box component="ul" sx={{ ml: 3 }}>
-            <Typography component="li" variant="body1">Gaining experience from battles and training</Typography>
-            <Typography component="li" variant="body1">Forming stronger bonds with their trainer</Typography>
-            <Typography component="li" variant="body1">Learning new abilities and techniques</Typography>
-            <Typography component="li" variant="body1">Evolving into more powerful forms</Typography>
-          </Box>
         </Box>
       )
     },
