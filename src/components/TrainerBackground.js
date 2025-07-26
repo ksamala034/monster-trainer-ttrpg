@@ -29,22 +29,22 @@ const BackgroundHeader = styled(Box)(({ theme }) => ({
   textAlign: 'center',
 }));
 
-const BackgroundImage = styled(Box)(({ theme, imageUrl }) => ({
-  height: '200px',
-  backgroundImage: `url(${imageUrl || 'https://via.placeholder.com/800x400?text=Background+Image'})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  position: 'relative',
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5))',
-  },
-}));
+// const BackgroundImage = styled(Box)(({ theme, imageUrl }) => ({
+//   height: '200px',
+//   backgroundImage: `url(${imageUrl || 'https://via.placeholder.com/800x400?text=Background+Image'})`,
+//   backgroundSize: 'cover',
+//   backgroundPosition: 'center',
+//   position: 'relative',
+//   '&::after': {
+//     content: '""',
+//     position: 'absolute',
+//     top: 0,
+//     left: 0,
+//     right: 0,
+//     bottom: 0,
+//     background: 'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5))',
+//   },
+// }));
 
 const BackgroundContent = styled(Box)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -66,7 +66,7 @@ const TrainerBackground = ({
   name = "Sample Background", 
   description = "This is a sample background description that provides context about the trainer's past experiences and how they've shaped their abilities.",
   bonuses = ["+2 to Insight checks", "Proficiency in one skill", "Bonus language"],
-  imageUrl
+  // imageUrl
 }) => {
   const [expanded, setExpanded] = useState(false);
   
@@ -76,7 +76,7 @@ const TrainerBackground = ({
 
   return (
     <BackgroundContainer elevation={3}>
-      <BackgroundImage imageUrl={imageUrl} />
+      {/* <BackgroundImage imageUrl={imageUrl} /> */}
       
       <BackgroundHeader>
         <Typography variant="h5" component="h3" gutterBottom sx={{ color: 'white' }}>
