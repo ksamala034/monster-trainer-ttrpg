@@ -2,16 +2,48 @@ import React, { useState } from 'react';
 import { 
   Container, 
   Typography, 
-  Paper, 
   Box, 
   Button, 
   Tabs, 
   Tab,
   useTheme,
   useMediaQuery,
-  styled
+  styled,
+  Grid
 } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import TrainerBackground from '../components/TrainerBackground';
+
+const trainerBackgrounds = [
+  {
+    id: 'acolyte',
+    name: 'Acolyte',
+    description: "The history of Thaloria has long been intermixed with the presence of monsters. From times before, a lot of religious groups have formed around the worship of monsters as nature spirits and guardians of sacred grounds. Some monsters that have lived long enough in the wild have attained mythical status bordering what humans perceive as deities. You are one such believer of those things. Whether you are shaman, clergyman or pilgrim before, monsters being religious figures is part of who you are. You now decided to start your journey as a trainer, as a way to get closer to understanding your beliefs. You hope to exemplify the ideals your sect believes as you tackle the challenge of raising and training your monster.",
+    bonuses: ["Tame", "Care", "Persuade"],
+    imageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
+  },
+  {
+    id: 'wilderness-guide',
+    name: 'Wilderness Guide',
+    description: "Having spent years navigating untamed lands, you've developed an innate understanding of creatures in their natural habitats. Your connection to nature makes you particularly adept at training wild monsters.",
+    bonuses: ["+2 to Survival checks", "Advantage on tracking monsters", "Bonus language: Sylvan"],
+    imageUrl: 'https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
+  },
+  {
+    id: 'arena-champion',
+    name: 'Arena Champion',
+    description: "A veteran of monster battles, you've honed your skills in competitive arenas. Your experience in high-stakes battles gives you unique insights into combat training and monster tactics.",
+    bonuses: ["+2 to Intimidation checks", "Proficiency with one weapon type", "Bonus to initiative"],
+    imageUrl: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
+  },
+  {
+    id: 'noble-scion',
+    name: 'Noble Scion',
+    description: "Born into privilege, you've had access to the finest trainers and rarest monsters. Your education in monster husbandry and noble connections provide unique advantages.",
+    bonuses: ["+2 to Persuasion checks", "Access to rare items", "Bonus language: Elvish"],
+    imageUrl: 'https://images.unsplash.com/photo-1517502884422-41eaead166d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
+  }
+];
 
 const BookTabs = styled(Tabs)(({ theme }) => ({
   minHeight: '48px',
@@ -149,10 +181,24 @@ const TrainerOptions = () => {
         </TabPanel>
 
         <TabPanel value={value} index={1}>
-          <Typography variant="h5" gutterBottom>Trainer Backgrounds</Typography>
-          <Typography color="text.secondary">
+          <Typography variant="h4" gutterBottom>Trainer Backgrounds</Typography>
+          <Typography color="text.secondary" paragraph>
             Select a background that shaped your trainer's past and provides special knowledge or skills.
+            Each background comes with unique bonuses and abilities.
           </Typography>
+          
+          <Grid container spacing={4}>
+            {trainerBackgrounds.map((background) => (
+              <Grid item xs={12} md={6} key={background.id}>
+                <TrainerBackground 
+                  name={background.name}
+                  description={background.description}
+                  bonuses={background.bonuses}
+                  imageUrl={background.imageUrl}
+                />
+              </Grid>
+            ))}
+          </Grid>
         </TabPanel>
 
         <TabPanel value={value} index={2}>
