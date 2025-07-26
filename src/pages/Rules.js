@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Typography, Paper, Box, List, ListItem, ListItemText, Grid, Button, useTheme, Divider } from '@mui/material';
-import { ChevronLeft, ChevronRight, MenuBook, Timeline, Psychology, Pets, LibraryBooks } from '@mui/icons-material';
+import { ChevronLeft, ChevronRight, MenuBook, Timeline, Psychology, Pets, LibraryBooks, SportsKabaddi } from '@mui/icons-material';
 
 const Rules = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -470,7 +470,7 @@ const Rules = () => {
     },
     {
       title: 'Monster Battles',
-      icon: <Timeline />,
+      icon: <SportsKabaddi />,
       hasSubsections: true,
       subsections: [
         {
